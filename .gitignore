@@ -1,0 +1,8 @@
+# Ignore virtual environment
+venv/
+# Ignore Django migrations
+*/migrations/
+# Ignore database
+*.sqlite3
+# Ignore environment variables
+.env

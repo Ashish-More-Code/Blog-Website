@@ -1,0 +1,126 @@
+{% extends 'base.html' %}
+
+{% block 'main' %}
+{% load static %}
+
+
+<!-- page heading  -->
+<div class="row">
+  <div class="p-5 text-center mb-2 bg-secondary bg-gradient text-white">
+    <h6>
+      What you want to read Today
+    </h6>
+  </div>
+</div>
+<!-- page heading end -->
+<div class="row justify-content-center mx-5 ">
+  <div class="row no-gutters justify-content-center">
+    <div class="col-auto">
+      <button type="button" class="btn btn-outline-primary">Gaming</button>
+    </div>
+    <div class="col-auto">
+      <button type="button" class="btn btn-outline-primary">Travel</button>
+    </div>
+    <div class="col-auto">
+      <button type="button" class="btn btn-outline-primary">Food</button>
+    </div>
+    <div class="col-auto">
+      <button type="button" class="btn btn-outline-primary">Movies</button>
+    </div>
+    <div class="col-auto">
+      <button type="button" class="btn btn-outline-primary">Art</button>
+    </div>
+    <div class="col-auto">
+      <button type="button" class="btn btn-outline-primary">Motivational</button>
+    </div>
+    <div class="col-auto">
+      <button type="button" class="btn btn-outline-primary">Gym</button>
+    </div>
+  </div>
+</div>
+
+<!-- trending section start -->
+<div class="row">
+  <div class="p-2 mt-2 text-center mb-2 bg-success bg-gradient text-white">
+    <h6>
+      Trending Today
+    </h6>
+  </div>
+</div>
+<!-- trending section end -->
+
+<!-- crads for trending  -->
+<div class="row m-2 row-cols-1 row-cols-md-3 g-4">
+  <div class="col">
+    <div class="card h-100">
+      <img src="..." class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional
+          content. This content is a little bit longer.</p>
+        <a href="/detailedblog" class="btn btn-primary">Go somewhere</a>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card h-100">
+      <img src="..." class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">This is a short card.</p>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card h-100">
+      <img src="..." class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional
+          content.</p>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- All section start -->
+<div class="row">
+  <div class="p-2 mt-2 text-center mb-2 bg-info bg-gradient text-white">
+    <h6>
+      All posts
+    </h6>
+  </div>
+</div>
+<!-- All section end -->
+<!-- crads for trending  -->
+<div class="row m-2 row-cols-1 row-cols-md-3 g-4">
+  <div class="col">
+    <div class="card h-100">
+      <img src="..." class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional
+          content. This content is a little bit longer.</p>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card h-100">
+      <img src="..." class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">This is a short card.</p>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card h-100">
+      <img src="..." class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional
+          content.</p>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock 'main' %}

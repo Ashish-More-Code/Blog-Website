@@ -3,11 +3,48 @@ from django.contrib.auth.models import User
 from django.contrib.auth import authenticate,login,logout
 from django.http import HttpResponse
 from datetime import datetime
-from blogapp.models import Blogpost
+from django.db.models import Count
+from blogapp.models import Blogpost,Like
 
 # Create your views here.
 def home(request):
-    return render(request,'index.html')
+    u = Blogpost.objects.all()
+    context = {}
+    context['data'] = u
+    trending_posts = Blogpost.objects.all().order_by('-likecount')
+    print(trending_posts.query)  # Print the SQL query for debugging
+    context['trending'] = trending_posts    
+    return render(request,'index.html',context)
+
+def bdetailshome(request,bid):
+    myblog=Blogpost.objects.filter(id=bid)
+    context={}
+    context['data']=myblog
+    return render(request,'bdetailfromhome.html',context)
+
+def like(request,bid):
+    if request.user.is_authenticated:
+        uid=request.user.id 
+        u=User.objects.filter(id=uid)
+        bpost=Blogpost.objects.filter(id=bid)
+
+        if bpost and u:
+            like = Like.objects.filter(blogpost=bpost[0], user=u[0]).first()
+            if like:
+                like.delete()
+                bpost[0].likecount -= 1
+                bpost[0].save()
+            else:
+                Like.objects.create(blogpost=bpost[0], user=u[0])
+                bpost[0].likecount += 1
+                bpost[0].save()
+
+        context={}
+        context['data']=bpost
+        return render(request,'bdetailfromhome.html',context)
+    else:
+        return render(request,'login.html')
+
 
 def registration(request):
     if request.method=='POST':

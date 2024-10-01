@@ -6,7 +6,7 @@ from django.conf import settings
 
 urlpatterns = [
     path('',views.home),
-    path('register/',views.registration),
+    path('register',views.registration),
     path('login/',views.ulogin),
     path('logout/',views.ulogout),
     path('createblog/',views.createblog),
@@ -14,7 +14,11 @@ urlpatterns = [
     path('myblogs/',views.myblogs),
     path('delete/<bid>',views.deletepost),
     path('detailblog/<bid>',views.detailedblog),
-    path('edit/<bid>',views.editblog)
+    path('edit/<bid>',views.editblog),
+    path('bdetailfromhome/<bid>',views.bdetailshome),
+    path('like/<bid>',views.like),
+
+
 ]
 
 if settings.DEBUG:

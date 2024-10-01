@@ -10,9 +10,12 @@ class Blogpost(models.Model):
     createdate=models.DateTimeField()
     type=models.IntegerField()
     pimage=models.ImageField(upload_to='image/')
+    likecount = models.IntegerField(default=0)
 
-class Comments(models.Model):
-    bid=models.ForeignKey(Blogpost,on_delete=models.CASCADE,db_column='blogid')
-    uid=models.ForeignKey(User,on_delete=models.CASCADE,db_column='userid')
-    likecount=models.IntegerField()
-    comments=models.CharField(max_length=200)
+
+class Like(models.Model):
+    blogpost = models.ForeignKey(Blogpost, on_delete=models.CASCADE, related_name='likes')
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+
+    class Meta:
+        unique_together = ('blogpost', 'user')

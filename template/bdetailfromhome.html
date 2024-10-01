@@ -12,7 +12,7 @@
 <body>
     <div class="container">
         <header class="my-4 text-center">
-            <h1>Your Blog</h1>
+            <h1>Blog</h1>
         </header>
         {% for x in data %}
 
@@ -22,9 +22,17 @@
                 <p class="lead">{{x.content}}</p>
             </div>
             <div class="like-share-buttons mt-4">
-                <button class="btn btn-primary mr-2">Like  {{x.likecount}}</button>
-                <button class="btn btn-secondary">Share</button>
+                <a href="/like/{{x.id}}" class="btn btn-primary">Like{{x.likecount}}</a>
+                <a href="/bdetailfromhome/{{x.id}}" class="btn btn-primary">Share</a>
+
             </div>
+            <form>
+            <div class="form-group">
+                <label for="comment">Comment</label>
+                <textarea class="form-control" id="comment" rows="3" placeholder="Enter your comment"></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary m-2">Submit</button>
+        </form>
         </article>
         {% endfor %}
     </div>

@@ -43,7 +43,7 @@
 <div class="row">
   <div class="p-2 mt-2 text-center mb-2 bg-success bg-gradient text-white">
     <h6>
-      Trending Today
+      Trending Blogs
     </h6>
   </div>
 </div>
@@ -51,76 +51,48 @@
 
 <!-- crads for trending  -->
 <div class="row m-2 row-cols-1 row-cols-md-3 g-4">
+  {% for x in trending %}
   <div class="col">
-    <div class="card h-100">
-      <img src="..." class="card-img-top" alt="...">
+    <div class="card h-100" style="height: 300px;">
+      <img src="{{x.pimage.url}}" class="card-img-top" alt="..." style="height: 150px; object-fit: cover;">
       <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional
-          content. This content is a little bit longer.</p>
-        <a href="/detailedblog" class="btn btn-primary">Go somewhere</a>
+        <h5 class="card-title">{{x.title}}</h5>
+        <p class="card-text">{{x.content|truncatewords:20}}</p>
+        <p class="card-text">{{x.likecount}}</p>
+
       </div>
+    
+        <a href="/bdetailfromhome/{{x.id}}" class="btn btn-primary">Read More</a>
+    
     </div>
   </div>
-  <div class="col">
-    <div class="card h-100">
-      <img src="..." class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">This is a short card.</p>
-      </div>
-    </div>
-  </div>
-  <div class="col">
-    <div class="card h-100">
-      <img src="..." class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional
-          content.</p>
-      </div>
-    </div>
-  </div>
+  {% endfor %}
 </div>
 <!-- All section start -->
 <div class="row">
   <div class="p-2 mt-2 text-center mb-2 bg-info bg-gradient text-white">
     <h6>
-      All posts
+      All Blogs
     </h6>
   </div>
 </div>
 <!-- All section end -->
 <!-- crads for trending  -->
 <div class="row m-2 row-cols-1 row-cols-md-3 g-4">
+  {% for x in data %}
   <div class="col">
-    <div class="card h-100">
-      <img src="..." class="card-img-top" alt="...">
+    <div class="card h-100" style="height: 300px;">
+      <img src="{{x.pimage.url}}" class="card-img-top" alt="..." style="height: 150px; object-fit: cover;">
       <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional
-          content. This content is a little bit longer.</p>
+        <h5 class="card-title">{{x.title}}</h5>
+        <p class="card-text">{{x.content|truncatewords:20}}</p>
       </div>
+    
+        <a href="/bdetailfromhome/{{x.id}}" class="btn btn-primary">Read More</a>
+    
     </div>
   </div>
-  <div class="col">
-    <div class="card h-100">
-      <img src="..." class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">This is a short card.</p>
-      </div>
-    </div>
-  </div>
-  <div class="col">
-    <div class="card h-100">
-      <img src="..." class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional
-          content.</p>
-      </div>
-    </div>
-  </div>
+  {% endfor %}
 </div>
+  
 {% endblock 'main' %}

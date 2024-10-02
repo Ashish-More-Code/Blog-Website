@@ -22,6 +22,13 @@ def bdetailshome(request,bid):
     context['data']=myblog
     return render(request,'bdetailfromhome.html',context)
 
+def fetchCategory(request,cat):
+    myblog=Blogpost.objects.filter(type=cat)
+    context={}
+    context['cat']=myblog
+    return render(request,'index.html',context)
+
+
 def like(request,bid):
     if request.user.is_authenticated:
         uid=request.user.id 

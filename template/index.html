@@ -7,9 +7,9 @@
 <!-- page heading  -->
 <div class="row">
   <div class="p-5 text-center mb-2 bg-secondary bg-gradient text-white">
-    <h6>
-      What you want to read Today
-    </h6>
+    <h4 class="display-4 fw-bold">
+      What you want to read Today ?
+    </h4>
   </div>
 </div>
 <!-- page heading end -->
@@ -38,7 +38,11 @@
     </div>
   </div>
 </div>
-
+{% if nodatafoundmsg %}
+<div class="alert alert-primary mt-5 text-center" role="alert">
+  {{nodatafoundmsg}}
+</div>
+{% else %}
 {%if cat %}
 <div class="row m-2 row-cols-1 row-cols-md-3 g-4">
   {% for x in cat %}
@@ -175,5 +179,5 @@
   {% endfor %}
 </div>
 {% endif %}
-
+{% endif %}
 {% endblock 'main' %}

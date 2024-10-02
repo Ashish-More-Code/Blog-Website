@@ -12,7 +12,6 @@ def home(request):
     context = {}
     context['data'] = u
     trending_posts = Blogpost.objects.all().order_by('-likecount')
-    print(trending_posts.query)  # Print the SQL query for debugging
     context['trending'] = trending_posts    
     return render(request,'index.html',context)
 
@@ -26,7 +25,11 @@ def fetchCategory(request,cat):
     myblog=Blogpost.objects.filter(type=cat)
     context={}
     context['cat']=myblog
-    return render(request,'index.html',context)
+    if not context['cat']:
+        context['nodatafoundmsg']="No posts available in this category yet. We’re working on bringing you fresh content soon!"
+        return render(request,'index.html',context)
+    else:
+        return render(request,'index.html',context)
 
 
 def like(request,bid):

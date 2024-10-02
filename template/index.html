@@ -58,12 +58,30 @@
       <div class="card-body">
         <h5 class="card-title">{{x.title}}</h5>
         <p class="card-text">{{x.content|truncatewords:20}}</p>
-        <p class="card-text">{{x.likecount}}</p>
-
       </div>
-    
-        <a href="/bdetailfromhome/{{x.id}}" class="btn btn-primary">Read More</a>
-    
+      <div class="row m-1">
+        {% if x.type == 1 %}
+        <p class="card-text"><small class="text-muted">Gaming</small></p>
+        {% elif x.type == 2 %}
+        <p class="card-text"><small class="text-muted">Travel</small></p>
+        {% elif x.type == 3 %}
+        <p class="card-text"><small class="text-muted">Food</small></p>
+        {% elif x.type == 4 %}
+        <p class="card-text"><small class="text-muted">Movie </small></p>
+        {% elif x.type == 5 %}
+        <p class="card-text"><small class="text-muted">Art</small></p>
+        {% elif x.type == 6 %}
+        <p class="card-text"><small class="text-muted">Motivational</small></p>
+        {% elif x.type == 7 %}
+        <p class="card-text"><small class="text-muted">Gym</small></p>
+        {% endif %}
+
+        <p class="card-text"><small class="text-muted">{{x.createdate}}</small></p>
+
+        <p class="card-text">Created by : {{x.userid.username}}</p>
+      </div>
+
+      <a href="/bdetailfromhome/{{x.id}}" class="btn btn-secondary">Read More</a>
     </div>
   </div>
   {% endfor %}
@@ -87,12 +105,36 @@
         <h5 class="card-title">{{x.title}}</h5>
         <p class="card-text">{{x.content|truncatewords:20}}</p>
       </div>
-    
-        <a href="/bdetailfromhome/{{x.id}}" class="btn btn-primary">Read More</a>
-    
+      <div class="card-body mt position-relative mx-3">
+        <p class="card-text position-absolute bottom-0 start-0 mb-2"><small class="text-muted">{{x.createdate}}</small>
+        </p>
+      </div>
+      <div class="row m-1">
+        {% if x.type == 1 %}
+        <p class="card-text"><small class="text-muted">Gaming</small></p>
+        {% elif x.type == 2 %}
+        <p class="card-text"><small class="text-muted">Travel</small></p>
+        {% elif x.type == 3 %}
+        <p class="card-text"><small class="text-muted">Food</small></p>
+        {% elif x.type == 4 %}
+        <p class="card-text"><small class="text-muted">Movie </small></p>
+        {% elif x.type == 5 %}
+        <p class="card-text"><small class="text-muted">Art</small></p>
+        {% elif x.type == 6 %}
+        <p class="card-text"><small class="text-muted">Motivational</small></p>
+        {% elif x.type == 7 %}
+        <p class="card-text"><small class="text-muted">Gym</small></p>
+        {% endif %}
+
+        <p class="card-text"><small class="text-muted">{{x.createdate}}</small></p>
+
+        <p class="card-text">Created by : {{x.userid.username}}</p>
+      </div>
+      <a href="/bdetailfromhome/{{x.id}}" class="btn btn-secondary">Read More</a>
+
     </div>
   </div>
   {% endfor %}
 </div>
-  
+
 {% endblock 'main' %}

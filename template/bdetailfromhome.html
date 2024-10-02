@@ -17,6 +17,7 @@
         {% for x in data %}
 
         <article class="post">
+            <img src="{{x.pimage.url}}" class="img-fluid w-100" alt="Responsive image" style="height: 400px;">
             <h2 class="post-title display-4">{{x.title}}</h2>
             <div class="post-content mt-4">
                 <p class="lead">{{x.content}}</p>

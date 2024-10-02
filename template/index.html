@@ -34,7 +34,7 @@
       <a href="/category/6" type="button" class="btn btn-outline-primary">Motivational</a>
     </div>
     <div class="col-auto">
-      <a href="/category/7" type="button" class="btn btn-outline-primary">Gym</a>
+      <a href="/category/7" type="button" class="btn btn-outline-primary">Fitness</a>
     </div>
   </div>
 </div>
@@ -67,7 +67,7 @@
         {% elif x.type == 6 %}
         <p class="card-text"><small class="text-muted">Motivational</small></p>
         {% elif x.type == 7 %}
-        <p class="card-text"><small class="text-muted">Gym</small></p>
+        <p class="card-text"><small class="text-muted">Fitness</small></p>
         {% endif %}
 
         <p class="card-text"><small class="text-muted">{{x.createdate}}</small></p>
@@ -75,7 +75,7 @@
         <p class="card-text">Created by : {{x.userid.username}}</p>
       </div>
 
-      <a href="/bdetailfromhome/{{x.id}}" class="btn btn-secondary">Read More</a>
+      <a href="/bdetailfromhome/{{x.id}}" class="btn btn-light" >Read More</a>
     </div>
   </div>
   {% endfor %}
@@ -115,7 +115,7 @@
         {% elif x.type == 6 %}
         <p class="card-text"><small class="text-muted">Motivational</small></p>
         {% elif x.type == 7 %}
-        <p class="card-text"><small class="text-muted">Gym</small></p>
+        <p class="card-text"><small class="text-muted">Fitness</small></p>
         {% endif %}
 
         <p class="card-text"><small class="text-muted">{{x.createdate}}</small></p>
@@ -123,7 +123,7 @@
         <p class="card-text">Created by : {{x.userid.username}}</p>
       </div>
 
-      <a href="/bdetailfromhome/{{x.id}}" class="btn btn-secondary">Read More</a>
+      <a href="/bdetailfromhome/{{x.id}}" class="btn btn-light">Read More</a>
     </div>
   </div>
   {% endfor %}
@@ -165,14 +165,14 @@
         {% elif x.type == 6 %}
         <p class="card-text"><small class="text-muted">Motivational</small></p>
         {% elif x.type == 7 %}
-        <p class="card-text"><small class="text-muted">Gym</small></p>
+        <p class="card-text"><small class="text-muted">Fitness</small></p>
         {% endif %}
 
         <p class="card-text"><small class="text-muted">{{x.createdate}}</small></p>
 
         <p class="card-text">Created by : {{x.userid.username}}</p>
       </div>
-      <a href="/bdetailfromhome/{{x.id}}" class="btn btn-secondary">Read More</a>
+      <a href="/bdetailfromhome/{{x.id}}" class="btn btn-light">Read More</a>
 
     </div>
   </div>

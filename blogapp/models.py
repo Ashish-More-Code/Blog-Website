@@ -19,3 +19,9 @@ class Like(models.Model):
 
     class Meta:
         unique_together = ('blogpost', 'user')
+
+class comments(models.Model):
+    uid=models.ForeignKey(User,on_delete=models.CASCADE,db_column='userid')
+    bid=models.ForeignKey(Blogpost,on_delete=models.CASCADE,db_column='blogid')
+    comment=models.TextField()
+

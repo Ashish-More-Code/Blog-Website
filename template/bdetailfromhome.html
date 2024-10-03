@@ -15,7 +15,11 @@
             <h1>Blog</h1>
         </header>
         {% for x in data %}
-
+        <div class="row mt-5">
+            <div class="col-12">
+                <a href="/">Back</a>
+            </div>
+        </div>
         <article class="post">
             <img src="{{x.pimage.url}}" class="img-fluid w-100" alt="Responsive image" style="height: 400px;">
             <h2 class="post-title display-4">{{x.title}}</h2>
@@ -27,17 +31,36 @@
                 <a href="/bdetailfromhome/{{x.id}}" class="btn btn-primary">Share</a>
 
             </div>
-            <form>
+            <form action="/comment/{{x.id}}" method="POST">
             <div class="form-group">
+                {% csrf_token %}
                 <label for="comment">Comment</label>
-                <textarea class="form-control" id="comment" rows="3" placeholder="Enter your comment"></textarea>
+                <textarea class="form-control" name="comm" id="comment" rows="3" placeholder="Enter your comment"></textarea>
               </div>
               <button type="submit" class="btn btn-primary m-2">Submit</button>
         </form>
         </article>
         {% endfor %}
     </div>
-   
+    <div class="container mt-5 mb-2"> 
+        <h5 class="card-title">Comments</h5>
+        {% for x in comments %}
+        <div class="card m-2">
+            <div class="card-body">
+                <div id="comments-section">
+                    <!-- Example of a stored comment -->
+                    <div class="card mt-3 m-2">
+                        <div class="card-body">
+                            <h6 class="card-subtitle mb-2 text-muted">{{x.uid.username}}</h6>
+                            <p class="card-text">{{x.comment}}</p>
+                        </div>
+                    </div>
+                    <!-- Repeat the above block for each comment -->
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
 
     <script src="{% static 'js/bootstrap.min.js'%}"></script>
 </body>

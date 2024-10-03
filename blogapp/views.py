@@ -4,7 +4,7 @@ from django.contrib.auth import authenticate,login,logout
 from django.http import HttpResponse
 from datetime import datetime
 from django.db.models import Count
-from blogapp.models import Blogpost,Like
+from blogapp.models import Blogpost,Like,comments
 
 # Create your views here.
 def home(request):
@@ -15,10 +15,33 @@ def home(request):
     context['trending'] = trending_posts    
     return render(request,'index.html',context)
 
+def handleComment(request,bid):
+    if request.user.is_authenticated:
+        u=request.user.id
+        detailblogpost=Blogpost.objects.filter(id=bid)
+        comm=comments.objects.filter(bid=bid)
+        context={}
+        context['data']=detailblogpost
+        context['comments']=comm
+        if request.method=='POST':
+            uid=User.objects.filter(id=u)
+            blogpost = Blogpost.objects.get(id=bid) 
+            comment=request.POST['comm']
+            u=comments.objects.create(uid=uid[0],bid=blogpost,comment=comment)
+            u.save()
+            return render(request,'bdetailfromhome.html',context)
+        else:
+            return render(request,'bdetailfromhome.html',context)
+    else:
+        return redirect('/login')
+
+
 def bdetailshome(request,bid):
     myblog=Blogpost.objects.filter(id=bid)
+    comm=comments.objects.filter(bid=bid)
     context={}
     context['data']=myblog
+    context['comments']=comm
     return render(request,'bdetailfromhome.html',context)
 
 def fetchCategory(request,cat):

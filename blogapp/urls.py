@@ -18,6 +18,7 @@ urlpatterns = [
     path('bdetailfromhome/<bid>',views.bdetailshome),
     path('like/<bid>',views.like),
     path('category/<cat>',views.fetchCategory),
+    path('comment/<bid>',views.handleComment),
 
 
 ]

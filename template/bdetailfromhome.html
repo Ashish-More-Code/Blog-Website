@@ -7,9 +7,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register</title>
     <link rel="stylesheet" href="{% static 'css/bootstrap.min.css'%}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
 </head>
 
-<body>
+<body style="background-color: aliceblue;">
     <div class="container">
         <header class="my-4 text-center">
             <h1>Blog</h1>
@@ -27,35 +29,31 @@
                 <p class="lead">{{x.content}}</p>
             </div>
             <div class="like-share-buttons mt-4">
-                <a href="/like/{{x.id}}" class="btn btn-primary">Like{{x.likecount}}</a>
-                <a href="/bdetailfromhome/{{x.id}}" class="btn btn-primary">Share</a>
+                <a href="/like/{{x.id}}" class="btn btn-primary"><i class="bi bi-heart-fill"></i> {{x.likecount}}</a>
+                <a href="/bdetailfromhome/{{x.id}}" class="btn btn-primary"><i class="bi bi-send-fill"></i></a>
+
 
             </div>
             <form action="/comment/{{x.id}}" method="POST">
-            <div class="form-group">
-                {% csrf_token %}
-                <label for="comment">Comment</label>
-                <textarea class="form-control" name="comm" id="comment" rows="3" placeholder="Enter your comment"></textarea>
-              </div>
-              <button type="submit" class="btn btn-primary m-2">Submit</button>
-        </form>
+                <div class="form-group">
+                    {% csrf_token %}
+                    <label for="comment">Comment</label>
+                    <textarea class="form-control" name="comm" id="comment" rows="3"
+                        placeholder="Enter your comment"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary m-2">Submit</button>
+            </form>
         </article>
         {% endfor %}
     </div>
-    <div class="container mt-5 mb-2"> 
+    <div class="container mt-5 mb-2">
         <h5 class="card-title">Comments</h5>
         {% for x in comments %}
-        <div class="card m-2">
-            <div class="card-body">
-                <div id="comments-section">
-                    <!-- Example of a stored comment -->
-                    <div class="card mt-3 m-2">
-                        <div class="card-body">
-                            <h6 class="card-subtitle mb-2 text-muted">{{x.uid.username}}</h6>
-                            <p class="card-text">{{x.comment}}</p>
-                        </div>
-                    </div>
-                    <!-- Repeat the above block for each comment -->
+        <div id="comments-section">
+            <div class="card mt-3 m-2">
+                <div class="card-body">
+                    <h6 class="card-subtitle mb-2 text-muted">{{x.uid.username}}</h6>
+                    <p class="card-text">{{x.comment}}</p>
                 </div>
             </div>
         </div>

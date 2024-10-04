@@ -6,7 +6,7 @@
 
 <!-- page heading  -->
 <div class="row">
-  <div class="p-5 text-center mb-2 bg-secondary bg-gradient text-white">
+  <div class="p-5 text-center mb-2 bg-info  bg-gradient text-white">
     <h4 class="display-4 fw-bold">
       What you want to read Today ?
     </h4>
@@ -16,25 +16,25 @@
 <div class="row justify-content-center mx-5 ">
   <div class="row no-gutters justify-content-center">
     <div class="col-auto">
-      <a href="/category/1" type="button" class="btn btn-outline-primary">Gaming</a>
+      <a href="/category/1" type="button" class="btn btn-outline-info"><b>Gaming</b> <i class="bi bi-discord"></i></a>
     </div>
     <div class="col-auto">
-      <a href="/category/2" type="button" class="btn btn-outline-primary">Travel</a>
+      <a href="/category/2" type="button" class="btn btn-outline-info"><b>Travel</b> <i class="bi bi-globe-central-south-asia"></i></a>
     </div>
     <div class="col-auto">
-      <a href="/category/3" type="button" class="btn btn-outline-primary">Food</a>
+      <a href="/category/3" type="button" class="btn btn-outline-info"><b>Food</b> <i class="bi bi-basket2"></i></a>
     </div>
     <div class="col-auto">
-      <a href="/category/4" type="button" class="btn btn-outline-primary">Movies</a>
+      <a href="/category/4" type="button" class="btn btn-outline-info"><b>Movies</b> <i class="bi bi-camera-reels-fill"></i></a>
     </div>
     <div class="col-auto">
-      <a href="/category/5" type="button" class="btn btn-outline-primary">Art</a>
+      <a href="/category/5" type="button" class="btn btn-outline-info"><b>Art</b> <i class="bi bi-palette-fill"></i></a>
     </div>
     <div class="col-auto">
-      <a href="/category/6" type="button" class="btn btn-outline-primary">Motivational</a>
+      <a href="/category/6" type="button" class="btn btn-outline-info"><b>Motivational</b> <i class="bi bi-person-check-fill"></i></a>
     </div>
     <div class="col-auto">
-      <a href="/category/7" type="button" class="btn btn-outline-primary">Fitness</a>
+      <a href="/category/7" type="button" class="btn btn-outline-info"><b>Fitness</b> <i class="bi bi-fire"></i></a>
     </div>
   </div>
 </div>
@@ -75,7 +75,7 @@
         <p class="card-text">Created by : {{x.userid.username}}</p>
       </div>
 
-      <a href="/bdetailfromhome/{{x.id}}" class="btn btn-light" >Read More</a>
+      <a href="/bdetailfromhome/{{x.id}}" class="btn btn-light">Read More</a>
     </div>
   </div>
   {% endfor %}
@@ -83,7 +83,7 @@
 {% else %}
 <!-- trending section start -->
 <div class="row">
-  <div class="p-2 mt-2 text-center mb-2 bg-success bg-gradient text-white">
+  <div class="p-2 mt-2 text-center mb-2 bg-danger bg-gradient text-white">
     <h6>
       Trending Blogs
     </h6>
@@ -153,7 +153,7 @@
       </div>
       <div class="row m-1">
         {% if x.type == 1 %}
-        <p class="card-text"><small class="text-muted">Gaming</small></p>
+        <p class="card-text"><small class="text-muted">Gaming </small></p>
         {% elif x.type == 2 %}
         <p class="card-text"><small class="text-muted">Travel</small></p>
         {% elif x.type == 3 %}

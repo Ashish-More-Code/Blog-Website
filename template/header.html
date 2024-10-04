@@ -12,10 +12,10 @@
 
 </head>
 
-<body>
-  <nav class="navbar navbar-expand-lg navbar-light py-3 mx-4">
+<body style="background-color: aliceblue;">
+  <nav class="navbar navbar-expand-lg navbar-light py-3 bg-light">
     <a class="navbar-brand" href="#"></a>
-    <h4>Blog</h4>
+    <h4><b>Blog</b></h4>
     </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
       aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -25,39 +25,39 @@
       <ul class="navbar-nav">
         <li class="nav-item active">
           <a class="nav-link" href="/">
-            <h5>Home</h5>
+            <h5><b>Home</b></h5>
           </a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">
-            <h5>About</h5>
+            <h5><b>About</b></h5>
           </a>
         </li>
         {% if user.is_authenticated %}
         <li class="nav-item">
           <a class="nav-link" href="/logout">
-            <h5>Logout</h5>
+            <h5><b>Logout</b></h5>
           </a>
         </li>
         <li class="nav-item"></li>
         <a class="nav-link" href="/createblog">
-          <h5>Create Blog</h5>
+          <h5><b>Create Blog</b></h5>
         </a>
         </li>
         <li class="nav-item"></li>
         <a class="nav-link" href="/myblogs">
-          <h5>Your Blog Posts</h5>
+          <h5><b>Your Blog Posts</b></h5>
         </a>
         </li>
         {% else %}
         <li class="nav-item">
           <a class="nav-link" href="/login">
-            <h5>Login</h5>
+            <h5><b>Login</b></h5>
           </a>
         </li>
         <li class="nav-item"></li>
         <a class="nav-link" href="/register">
-          <h5>Register</h5>
+          <h5><b>Register</b></h5>
         </a>
         </li>
         {% endif %}

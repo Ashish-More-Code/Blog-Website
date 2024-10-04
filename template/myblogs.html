@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="{% static 'css/bootstrap.min.css'%}">
 </head>
 
-<body></body>
+<body style="background-color: aliceblue;">
 <div class="container my-5">
     <div class="row mt-5">
         <div class="col-12">
@@ -47,10 +47,10 @@
                             <a href="/detailblog/{{x.id}}" class="btn btn-primary">Details</a>
                         </div>
                         <div class="col-auto">
-                            <a href="/edit/{{x.id}}" class="btn btn-primary">Edit</a>
+                            <a href="/edit/{{x.id}}" class="btn btn-secondary">Edit</a>
                         </div>
                         <div class="col-auto">
-                            <a href="/delete/{{x.id}}" class="btn btn-primary">Delete</a>
+                            <a href="/delete/{{x.id}}" class="btn btn-danger">Delete</a>
                         </div>
                     </div>
                 </div>

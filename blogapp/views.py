@@ -175,8 +175,10 @@ def deletepost(request,bid):
 
 def detailedblog(request,bid):
     myblog=Blogpost.objects.filter(id=bid)
+    comm=comments.objects.filter(bid=bid)
     context={}
     context['data']=myblog
+    context['comments']=comm
     return render(request,'detailedblog.html',context)
     
 def editblog(request,bid):

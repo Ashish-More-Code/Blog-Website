@@ -20,6 +20,7 @@ urlpatterns = [
     path('category/<cat>',views.fetchCategory),
     path('comment/<bid>',views.handleComment),
     path('about',views.about),
+    path('account',views.account),
 
 
 ]

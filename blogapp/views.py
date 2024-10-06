@@ -19,6 +19,17 @@ def home(request):
 def about(request):
     return render(request,'about.html')
 
+def account(request):
+    uid=request.user.id
+    u=Blogpost.objects.filter(userid=uid)
+    context={}
+    context['TotalB']=len(u)
+    count=0
+    for i in u:
+        count=count+i.likecount
+    context['LikeCount']=count
+    return render(request,'account.html',context)
+
 def handleComment(request,bid):
     if request.user.is_authenticated:
         u=request.user.id

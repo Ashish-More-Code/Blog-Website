@@ -22,7 +22,7 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse justify-content-center" id="navbarNavDropdown">
-      <ul class="navbar-nav">
+      <ul class="navbar-nav ml-2">
         <li class="nav-item active">
           <a class="nav-link" href="/">
             <h5><b>Home</b></h5>
@@ -34,11 +34,6 @@
           </a>
         </li>
         {% if user.is_authenticated %}
-        <li class="nav-item">
-          <a class="nav-link" href="/logout">
-            <h5><b>Logout</b></h5>
-          </a>
-        </li>
         <li class="nav-item"></li>
         <a class="nav-link" href="/createblog">
           <h5><b>Create Blog</b></h5>
@@ -48,6 +43,16 @@
         <a class="nav-link" href="/myblogs">
           <h5><b>Your Blog Posts</b></h5>
         </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/account">
+            <h5><b>Account</b></h5>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/logout">
+            <h5><b>Logout</b></h5>
+          </a>
         </li>
         {% else %}
         <li class="nav-item">

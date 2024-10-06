@@ -16,6 +16,9 @@ def home(request):
     context['trending'] = trending_posts    
     return render(request,'index.html',context)
 
+def about(request):
+    return render(request,'about.html')
+
 def handleComment(request,bid):
     if request.user.is_authenticated:
         u=request.user.id

@@ -46,11 +46,11 @@
         </article>
         {% endfor %}
     </div>
-    <div class="container mt-5 mb-2">
+    <div class="container mt-5 mb-5">
         <h5 class="card-title">Comments</h5>
         {% for x in comments %}
         <div id="comments-section">
-            <div class="card mt-3 m-2">
+            <div class="card mt-3">
                 <div class="card-body">
                     <h6 class="card-subtitle mb-2 text-muted">{{x.uid.username}}</h6>
                     <p class="card-text">{{x.comment}}</p>

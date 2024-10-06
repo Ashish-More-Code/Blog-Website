@@ -19,6 +19,7 @@ urlpatterns = [
     path('like/<bid>',views.like),
     path('category/<cat>',views.fetchCategory),
     path('comment/<bid>',views.handleComment),
+    path('about',views.about),
 
 
 ]

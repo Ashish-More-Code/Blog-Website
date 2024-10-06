@@ -7,6 +7,7 @@ from django.db.models import Count
 from blogapp.models import Blogpost,Like,comments
 
 # Create your views here.
+
 def home(request):
     u = Blogpost.objects.all()
     context = {}

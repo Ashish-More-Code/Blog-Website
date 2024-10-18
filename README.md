@@ -26,3 +26,5 @@ Browse and read all blogs.
 Filter blogs by category.
 
 Like and comment on blogs.
+
+users can like blog only once

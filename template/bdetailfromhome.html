@@ -29,7 +29,7 @@
                 <p class="lead">{{x.content}}</p>
             </div>
             <div class="like-share-buttons mt-4">
-                <a href="/like/{{x.id}}" class="btn btn-primary"><i class="bi bi-heart-fill"></i> {{x.likecount}}</a>
+                <a href="/like/{{x.id}}" class="btn btn-primary"><i class="bi bi-heart-fill"></i>{{x.likecount}}</a>
                 <a href="/bdetailfromhome/{{x.id}}" class="btn btn-primary"><i class="bi bi-send-fill"></i></a>
 
 
@@ -41,6 +41,11 @@
                     <textarea class="form-control" name="comm" id="comment" rows="3"
                         placeholder="Enter your comment"></textarea>
                 </div>
+                {% if errc %}
+                <div class="alert alert-primary mt-5" role="alert">
+                    {{errc}}
+                </div>
+                {% endif %}
                 <button type="submit" class="btn btn-primary m-2">Submit</button>
             </form>
         </article>
@@ -69,7 +74,9 @@
                 window.location.reload();
             }
         });
+
     </script>
+    
 </body>
 
 </html>

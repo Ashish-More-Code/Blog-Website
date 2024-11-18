@@ -42,9 +42,13 @@ def handleComment(request,bid):
             uid=User.objects.filter(id=u)
             blogpost = Blogpost.objects.get(id=bid) 
             comment=request.POST['comm']
-            u=comments.objects.create(uid=uid[0],bid=blogpost,comment=comment)
-            u.save()
-            return render(request,'bdetailfromhome.html',context)
+            if comment=="":
+                context['errc']="Comments cannot be empty!"
+                return render(request,'bdetailfromhome.html',context)
+            else:
+                u=comments.objects.create(uid=uid[0],bid=blogpost,comment=comment)
+                u.save()
+                return render(request,'bdetailfromhome.html',context)
         else:
             return render(request,'bdetailfromhome.html',context)
     else:
@@ -75,6 +79,7 @@ def like(request,bid):
         uid=request.user.id 
         u=User.objects.filter(id=uid)
         bpost=Blogpost.objects.filter(id=bid)
+        comm=comments.objects.filter(bid=bid)
 
         if bpost and u:
             like = Like.objects.filter(blogpost=bpost[0], user=u[0]).first()
@@ -88,6 +93,8 @@ def like(request,bid):
                 bpost[0].save()
 
         context={}
+        #added comment
+        context['comments']=comm
         context['data']=bpost
         return render(request,'bdetailfromhome.html',context)
     else:

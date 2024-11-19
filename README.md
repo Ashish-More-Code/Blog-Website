@@ -1,30 +1,30 @@
 ![image](https://github.com/user-attachments/assets/6e11e1a6-b0a3-4556-a139-d7c93c1214ad)
 
-<p align="center">_**Blog Portal**_</p>
+<p align="center">Blog Portal</p>
 An interactive blog portal where users can post, edit, delete blogs, and engage with others through likes and comments.
 
 
-<p align="center">_**Features**_</p>
+<p align="center">Features</p>
 **User Authentication**
 
 Users can register and log in to the portal.
 
 
-<p align="center">_**Create and Manage Blogs**_</p>
+<p align="center">Create and Manage Blogs</p>
 
 Post new blogs.
 
 Edit and delete blogs from "My Blogs" section.
 
 
-<p align="center">_**Dashboard**_ </p>
+<p align="center">Dashboard </p>
 
 View the total number of blogs posted by the user.
 
 View the combined total number of blogs.
 
 
-<p align="center">_**Home Page**_ </p>
+<p align="center">Home Page</p>
 
 Browse and read all blogs.
 

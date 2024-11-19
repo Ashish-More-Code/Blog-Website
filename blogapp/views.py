@@ -9,10 +9,10 @@ from blogapp.models import Blogpost,Like,comments
 # Create your views here.
 
 def home(request):
-    u = Blogpost.objects.all()
+    u = Blogpost.objects.filter(is_active=True)
     context = {}
     context['data'] = u
-    trending_posts = Blogpost.objects.all().order_by('-likecount')
+    trending_posts = Blogpost.objects.filter(is_active=True).order_by('-likecount')
     context['trending'] = trending_posts    
     return render(request,'index.html',context)
 

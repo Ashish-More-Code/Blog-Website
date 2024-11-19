@@ -41,7 +41,12 @@
                     <p class="card-text"><small class="text-muted">Gym</small></p>
                     {% endif %}
 
-                    <p class="card-text">Author : {{x.userid.username}}</p>
+                    <p class="card-text"><b>Author</b>:{{x.userid.username}}</p>
+                    {% if x.is_active %}
+                    <p class="card-text"><b>Status</b>:Published</p>
+                    {% else %}
+                    <p class="card-text"><b>Status</b>:Pending</p>
+                    {% endif %}
                     <div class="row mt-auto">
                         <div class="col-auto">
                             <a href="/detailblog/{{x.id}}" class="btn btn-primary">Details</a>

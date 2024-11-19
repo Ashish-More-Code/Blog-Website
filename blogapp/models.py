@@ -11,7 +11,10 @@ class Blogpost(models.Model):
     type=models.IntegerField()
     pimage=models.ImageField(upload_to='image/')
     likecount = models.IntegerField(default=0)
+    is_active = models.BooleanField(default=False)
 
+    def __str__(self): 
+        return self.title
 
 class Like(models.Model):
     blogpost = models.ForeignKey(Blogpost, on_delete=models.CASCADE, related_name='likes')
